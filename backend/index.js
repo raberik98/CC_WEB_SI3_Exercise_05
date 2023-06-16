@@ -24,3 +24,25 @@ app.get("/", (req,res) => {
         res.status(500).json({message:"Ups, something went wrong in our end."})
     }
 })
+
+app.post("/login", (req,res) => {
+    try {
+        let loginData = req.body
+        let validated = false
+        let role = ""
+        data.accounts.forEach((item, index) => {
+            if (loginData.name == item.name && loginData.password == item.password) {
+                validated = true
+                role = item.role
+            }
+        })
+        if (validated) {
+            res.send(role)
+        }
+        else {
+            res.status(500).send("Unsuccessful validation")
+        }
+    } catch (error) {
+        res.status(500).json({message:"Ups, something went wrong in our end."})
+    }
+})
