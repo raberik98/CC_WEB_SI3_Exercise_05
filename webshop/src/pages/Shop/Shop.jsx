@@ -1,20 +1,15 @@
 // import { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import img from "./../assets/img/404.png";
+import Navbar from "../../components/Navbar/Navbar";
+import "./Shop.css"
 
 export default function Shop() {
-  // const [data, setData] = useState(null)
-
-  // useEffect(()=>{
-  //     fetch("http://localhost:3001/").then((resp) => resp.json()).then((finalData) => {setData(finalData)})
-  // },[])
 
   return (
     <>
       <Navbar />
       <div className="itemsGoHere">
         <div className="card" style={{ width: "350px" }}>
-          <img src={img} className="card-img-top" alt="..." />
+          <img src={"/404.png"} className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="card-title">Title</h5>
             <p className="card-text">description</p>
