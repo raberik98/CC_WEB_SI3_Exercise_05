@@ -1,5 +1,11 @@
 
 .itemsGoHere {
-    width: auto;
+    position: relative;
     margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    width: 1000px;
+    justify-content: left;
+    gap: 1rem;
+    align-items: center;
 }
