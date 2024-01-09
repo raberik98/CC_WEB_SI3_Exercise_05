@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ToastContext } from "../../contects/ToastContext";
 import "./Navbar.css"
 
-export default function Navbar() {
+export default function Navbar({ filterValue, setFilterValue, setIsAsc }) {
+
+    const { addToast } = useContext(ToastContext)
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary costumeNav">
       <div className="container-fluid">
@@ -32,17 +37,22 @@ export default function Navbar() {
               </Link>
             </li>
           </ul>
-          <form className="d-flex" role="search">
+          <div className="d-flex" role="search">
             <input
               className="form-control me-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
+              value={filterValue}
+              onChange={(e) => { setFilterValue(e.target.value) }}
             />
-            <button className="btn btn-outline-success" type="submit">
-              Search
+            <button onClick={() => setIsAsc((prevState) => !prevState)} className="btn btn-outline-success">
+              Change sort order!
             </button>
-          </form>
+            <button className="btn btn-outline-info" onClick={addToast}>
+              Add toast
+            </button>
+          </div>
         </div>
       </div>
     </nav>

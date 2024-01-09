@@ -1,0 +1,7 @@
+.ToastItem{
+    height: 3rem;
+    width: 10rem;
+    background-color: gray;
+    position: relative;
+    left: 0.5rem;
+}
